@@ -15,8 +15,10 @@ export default function PokedexContainer() {
         <div className="pokedex-info">
           <div className="info-leftpanel panel">
             <h3>About</h3>
-            <p>Height: {"height"}</p>
-            <p>Weight: {"weight"}</p>
+            <div className="about-info">
+              <p>Height: {"height"}</p>
+              <p>Weight: {"weight"}</p>
+            </div>
             <div className="info-leftpanel panel">
               <h3>Abilities</h3>
               <div className="abilities-container">
@@ -33,7 +35,21 @@ export default function PokedexContainer() {
             </div>
           </div>
           <div className="info-rightpanel panel">
-            <p>test</p>
+            <div className="type-container">
+              <h3>Types</h3>
+              {/* Display pokemon types dynamically */}
+              <p className="type">Electric</p>
+            </div>
+            <div className="stats-container">
+              <h3>Base Stats</h3>
+              {/* Display base stats dynamically */}
+              <p>HP: ###</p>
+              <p>Attack: ###</p>
+              <p>Special Attack: ###</p>
+              <p>Defense: ###</p>
+              <p>Special Defense: ###</p>
+              <p>Speed: ###</p>
+            </div>
           </div>
         </div>
       </div>
