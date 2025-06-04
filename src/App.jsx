@@ -14,11 +14,11 @@ function App() {
     async function fetchData() {
       try {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+        if (!res.ok) throw new Error("Pokémon no encontrado");
         const data = await res.json();
         setPokemonData(data);
       } catch (err) {
         console.error("Error al buscar el Pokémon:", err);
-        setPokemonData(null);
       }
     }
 
