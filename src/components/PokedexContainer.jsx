@@ -1,33 +1,33 @@
 import Abilities from "./Abilities.jsx";
+import { capitalizeWord } from "../utils/helpers.js";
 
-export default function PokedexContainer(data) {
+export default function PokedexContainer({ data }) {
   return (
     <>
       <div className="container-pokedex">
         <div className="pokedex-header">
-          <p>{data.name ? data.name : "???"}</p>
+          <p>{data.name ? capitalizeWord(data.name) : "???"}</p>
           <p>#{data.id ? data.id : "???"}</p>
         </div>
         <div className="pokedex-sprites">
-          <p>SPRITE FRONT</p>
-          <p>SPRITE BACK</p>
+          {data.sprites ? <img src={data.sprites.front_default} alt={data.name} /> : "No Pokemon Selected..."}
+          {data.sprites ? <img src={data.sprites.back_default} alt={data.name} /> : ""}
         </div>
         <div className="pokedex-info">
           <div className="info-leftpanel panel">
             <h3>About</h3>
             <div className="about-info">
-              <p>Height: {data.height ? data.height : "?"}</p>
-              <p>Weight: {data.weight ? data.weight : "?"}</p>
+              <p>Height: {data.height ? (data.height / 10).toFixed(1) + "mts." : "?"}</p>
+              <p>Weight: {data.weight ? (data.weight / 10).toFixed(1) + "kg." : "?"} </p>
             </div>
             <div className="info-leftpanel panel">
               <h3>Abilities</h3>
               <div className="abilities-container">
-                {/* TODO: Displayear las habilidades con map */}
                 {data.abilities
                   ? data.abilities.map((ability) => {
                       return (
                         <Abilities key={ability.slot}>
-                          <h4>{ability.ability.name}</h4>
+                          <h4>{capitalizeWord(ability.ability.name)}</h4>
                           <p>text test</p>
                         </Abilities>
                       );
@@ -39,31 +39,23 @@ export default function PokedexContainer(data) {
           <div className="info-rightpanel panel">
             <div className="type-container">
               <h3>Types</h3>
-              {/* Display pokemon types dynamically */}
               {data.types
                 ? data.types.map((type) => (
                     <p className="type" key={type.slot}>
-                      type.type.name
+                      {capitalizeWord(type.type.name)}
                     </p>
                   ))
                 : "?"}
             </div>
             <div className="stats-container">
               <h3>Base Stats</h3>
-              {/* Display base stats dynamically */}
               {data.stats
                 ? data.stats.map((stat, index) => (
                     <p key={index}>
-                      {stat.stat.name}: {stat.base_stat}
+                      {capitalizeWord(stat.stat.name)}: {stat.base_stat}
                     </p>
                   ))
                 : "No pokemon selected..."}
-              {/* <p>HP: ###</p>
-              <p>Attack: ###</p>
-              <p>Special Attack: ###</p>
-              <p>Defense: ###</p>
-              <p>Special Defense: ###</p>
-              <p>Speed: ###</p> */}
             </div>
           </div>
         </div>
