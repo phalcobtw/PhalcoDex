@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+.main-title {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 900;
+  font-size: 3.5em;
+}
+
 .header {
   display: flex;
   flex-direction: column;
