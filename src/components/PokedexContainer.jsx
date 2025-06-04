@@ -6,7 +6,7 @@ export default function PokedexContainer() {
       <div className="container-pokedex">
         <div className="pokedex-header">
           <p>NOMBRE</p>
-          <p># NUMERO</p>
+          <p># NUMERO (id)</p>
         </div>
         <div className="pokedex-sprites">
           <p>SPRITE FRONT</p>
