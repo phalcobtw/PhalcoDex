@@ -1,12 +1,32 @@
-# React + Vite
+# 📘 Pokédex Simple
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una Pokédex minimalista construida con **React**, **Vite** y **CSS**, que permite buscar información básica de Pokémon utilizando la [PokéAPI](https://pokeapi.co/). Este proyecto forma parte de mi portafolio personal para demostrar el consumo de APIs, el manejo de estado en React y una UI limpia.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧩 Funcionalidades
 
-## Expanding the ESLint configuration
+- 🔍 Búsqueda de Pokémon por nombre
+- 📸 Visualización de sprites (frontal y trasero)
+- ⚡ Muestra de habilidades y estadísticas básicas
+- 🎨 Interfaz responsive y diseño minimalista
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tecnologías
+
+- ⚛️ React
+- ⚡ Vite
+- 🎨 CSS (Flexbox y Grid)
+- 🔗 PokéAPI
+
+---
+
+## 🚀 Instalación y ejecución
+
+```bash
+git clone https://github.com/tu-usuario/pokedex-simple.git
+cd pokedex-simple
+npm install
+npm run dev
+```
