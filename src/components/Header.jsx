@@ -8,7 +8,9 @@ export default function Header({ onSubmit, inputRef }) {
       <h1 className="main-title">PhalcoDex</h1>
       <form className="container-search" onSubmit={handleSubmit}>
         <input type="text" placeholder="Pokemon..." ref={inputRef} />
-        <button type="submit">Buscar</button>
+        <button type="submit" className="button-component">
+          Buscar
+        </button>
       </form>
     </header>
   );
