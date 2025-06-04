@@ -18,7 +18,7 @@ function App() {
         setPokemonData(data);
       } catch (err) {
         console.error("Error al buscar el Pokémon:", err);
-        setPokemonData(null); // o podrías manejar un estado de error
+        setPokemonData(null);
       }
     }
 
@@ -34,7 +34,7 @@ function App() {
 
   return (
     <>
-      <Header ref={inputRef} onSubmit={handleClick}></Header>
+      <Header inputRef={inputRef} onSubmit={handleClick}></Header>
       <PokedexContainer data={pokemonData}></PokedexContainer>
     </>
   );
