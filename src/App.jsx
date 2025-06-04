@@ -1,10 +1,12 @@
 import "./App.css";
 import Header from "./components/Header.jsx";
 import PokedexContainer from "./components/PokedexContainer.jsx";
+import Modal from "./components/Modal.jsx";
 import { useEffect, useRef, useState } from "react";
 
 function App() {
   const inputRef = useRef();
+  const modalRef = useRef();
   const [pokemonData, setPokemonData] = useState({});
   const [pokemonName, setPokemonName] = useState("");
 
@@ -18,7 +20,7 @@ function App() {
         const data = await res.json();
         setPokemonData(data);
       } catch (err) {
-        console.error("Error al buscar el Pokémon:", err);
+        modalRef.current.showModal();
       }
     }
 
@@ -34,6 +36,7 @@ function App() {
 
   return (
     <>
+      {<Modal ref={modalRef}></Modal>}
       <Header inputRef={inputRef} onSubmit={handleClick}></Header>
       <PokedexContainer data={pokemonData}></PokedexContainer>
     </>
