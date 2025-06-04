@@ -22,7 +22,22 @@
   padding: 0.8rem;
   color: white;
   font-size: 1.2em;
+  border: none;
 }
+
+.container-search input:hover {
+  outline: none;
+  box-shadow: none;
+  border-color: initial; /* opcional: restablece el color de borde */
+  border: none;
+}
+.container-search input:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: initial;
+  border: none;
+}
+
 .container-search button {
   background-color: #e63946; /* rojo suave tipo Pokébola */
   color: #fff;
@@ -69,20 +84,29 @@
 
 .pokedex-info {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   margin-top: 2rem;
 }
 
+.about-info {
+  color: #464242;
+}
+
 .info-rightpanel {
   border-left: 2px solid #b3b2b2ad;
+  padding-left: 10px;
 }
 
 .info-leftpanel {
+  padding-right: 10px;
 }
 
 .panel {
   flex: 1;
+  h3 {
+    margin-top: 0;
+  }
 }
 
 .abilities-container {
@@ -101,3 +125,9 @@
   margin: 0 auto;
   font-size: 0.95em;
 }
+
+.stats-container p {
+  margin: 0;
+}
+
+/* AGREGAR TYPES PARA BACKGROUND COLOR DINAMICO */
