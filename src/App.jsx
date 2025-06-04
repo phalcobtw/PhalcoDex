@@ -6,19 +6,30 @@ import { useEffect, useRef, useState } from "react";
 function App() {
   const inputRef = useRef();
   const [pokemonData, setPokemonData] = useState({});
+  const [pokemonName, setPokemonName] = useState("");
 
-  async function fetchPokemonData(pokemon) {
-    try {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    if (!pokemonName) return; // evita llamada inicial vacía
+
+    async function fetchData() {
+      try {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+        const data = await res.json();
+        setPokemonData(data);
+      } catch (err) {
+        console.error("Error al buscar el Pokémon:", err);
+        setPokemonData(null); // o podrías manejar un estado de error
+      }
     }
-  }
+
+    fetchData();
+  }, [pokemonName]);
 
   function handleClick() {
-    setPokemonData(fetchPokemonData(inputRef.current.value));
+    const name = inputRef.current.value.trim().toLowerCase();
+    if (name) {
+      setPokemonName(name);
+    }
   }
 
   return (
