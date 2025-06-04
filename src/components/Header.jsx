@@ -1,11 +1,15 @@
-export default function Header({ ref, onSubmit }) {
+export default function Header({ onSubmit, inputRef }) {
+  function handleSubmit(e) {
+    e.preventDefault(); // evita que recargue la página
+    onSubmit();
+  }
   return (
     <header className="header">
-      <h1>PhalcoDex</h1>
-      <div className="container-search">
-        <input type="text" placeholder="Pokemon..." ref={ref} />
-        <button onClick={onSubmit}>Buscar</button>
-      </div>
+      <h1 className="main-title">PhalcoDex</h1>
+      <form className="container-search" onSubmit={handleSubmit}>
+        <input type="text" placeholder="Pokemon..." ref={inputRef} />
+        <button type="submit">Buscar</button>
+      </form>
     </header>
   );
 }
