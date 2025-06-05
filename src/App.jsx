@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header.jsx";
 import PokedexContainer from "./components/PokedexContainer.jsx";
 import Toast from "./components/Toast.jsx";
+import DarkBackground from "./components/DarkBackground.jsx";
 import { useEffect, useRef, useState } from "react";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <>
+      <DarkBackground></DarkBackground>
       <div className="toast-container">
         {toasts.map((toast) => (
           <Toast
