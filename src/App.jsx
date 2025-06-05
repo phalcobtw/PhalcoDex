@@ -1,12 +1,12 @@
 import "./App.css";
 import Header from "./components/Header.jsx";
 import PokedexContainer from "./components/PokedexContainer.jsx";
-import Modal from "./components/Modal.jsx";
+import Toast from "./components/Toast.jsx";
 import { useEffect, useRef, useState } from "react";
 
 function App() {
   const inputRef = useRef();
-  const modalRef = useRef();
+  const [toasts, setToasts] = useState([]);
   const [pokemonData, setPokemonData] = useState({});
   const [pokemonName, setPokemonName] = useState("");
 
@@ -20,12 +20,24 @@ function App() {
         const data = await res.json();
         setPokemonData(data);
       } catch (err) {
-        modalRef.current.showModal();
+        showToasty(err.message);
+        setPokemonName("");
       }
     }
 
     fetchData();
   }, [pokemonName]);
+
+  function showToasty(message) {
+    const id = Date.now(); // ID único por tiempo
+    const newToast = { id, message };
+
+    setToasts((prev) => [...prev, newToast]);
+
+    setTimeout(() => {
+      setToasts((prev) => prev.filter((toast) => toast.id !== id));
+    }, 3000); // duración del toast
+  }
 
   function handleClick() {
     const name = inputRef.current.value.trim().toLowerCase();
@@ -33,10 +45,18 @@ function App() {
       setPokemonName(name);
     }
   }
-
   return (
     <>
-      {<Modal ref={modalRef}></Modal>}
+      <div className="toast-container">
+        {toasts.map((toast) => (
+          <Toast
+            key={toast.id}
+            message={toast.message}
+            duration={3000}
+            onClose={() => setToasts((prev) => prev.filter((t) => t.id !== toast.id))}
+          />
+        ))}
+      </div>
       <Header inputRef={inputRef} onSubmit={handleClick}></Header>
       <PokedexContainer data={pokemonData}></PokedexContainer>
     </>
