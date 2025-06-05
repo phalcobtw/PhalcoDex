@@ -18,6 +18,7 @@
   flex-direction: column;
   width: 700px;
   margin: 0 auto;
+  z-index: 99;
 }
 
 .container-search {
@@ -28,8 +29,9 @@
 }
 .container-search input {
   flex: 1;
-  padding: 0.8rem;
-  color: white;
+  padding: 0.8rem 2.5rem;
+  background-color: white;
+  color: black;
   font-size: 1.2em;
   border: none;
   border-radius: 1.5rem;
@@ -119,6 +121,7 @@
   color: black;
   margin-top: 2rem;
   max-width: 700px;
+  z-index: 99;
 }
 
 .pokedex-header {
@@ -134,6 +137,11 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+}
+
+.pokemon-sprite {
+  width: 150px;
+  height: 150px;
 }
 
 .pokedex-info {
