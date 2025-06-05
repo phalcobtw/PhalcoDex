@@ -27,7 +27,7 @@ export default function PokedexAbilities({ data }) {
         );
         setAbilitiesInfo(results);
       } catch (error) {
-        console.error("Error loading abilities:", err);
+        console.error("Error loading abilities:", error);
       }
     }
     fetchAbilitiesData();
