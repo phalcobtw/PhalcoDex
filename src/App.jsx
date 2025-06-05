@@ -33,10 +33,6 @@ function App() {
     const newToast = { id, message };
 
     setToasts((prev) => [...prev, newToast]);
-
-    setTimeout(() => {
-      setToasts((prev) => prev.filter((toast) => toast.id !== id));
-    }, 3000); // duración del toast
   }
 
   function handleClick() {
@@ -45,6 +41,7 @@ function App() {
       setPokemonName(name);
     }
   }
+
   return (
     <>
       <div className="toast-container">
