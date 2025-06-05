@@ -144,6 +144,10 @@ dialog::backdrop {
   gap: 1rem; /* espacio entre los ítems */
 }
 
+.abilities-container:has(> :only-child) {
+  grid-template-columns: repeat(1, 1fr);
+}
+
 .ability-container p {
   margin: 0 auto;
   color: #464242;
