@@ -10,7 +10,7 @@
   font-weight: 900;
   font-size: 3.5em;
   color: #ffcb05;
-  text-shadow: -5px -5px 1px #2a75bb, -5px 5px 1px #2a75bb, 5px -5px 1px #2a75bb, 5px -5px 1px#2a75bb;
+  text-shadow: -7px -7px 1px #3c5aa6, -7px 7px 1px #3c5aa6, 5px -5px 1px #2a75bb, 5px -5px 1px#2a75bb;
 }
 
 .header {
@@ -51,27 +51,65 @@
 .container-search button {
   position: absolute;
   right: 0px;
-  padding: 0.8rem;
-  width: 90px;
+  padding: 0.85rem;
+  width: 85px;
+  transform-origin: right center;
+}
+
+.container-search button:hover {
+  animation: expandLeft 1s forwards;
 }
 
 .button-component {
-  background-color: #e63946;
-  color: #fff;
+  position: relative;
+  display: flex;
+  height: 48px;
+  background-color: #f33b27;
   border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: inherit;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 9999px;
+  overflow: hidden;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  padding: 0;
+  font-weight: 700;
+  font-size: 0.85em;
+  font-family: "Press Start 2P", system-ui;
+  align-items: baseline;
+}
+
+.faIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  transition: left 0.3s ease;
+}
+
+.button-text {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -38%);
+}
+
+.button-component:hover .button-text {
+  opacity: 1;
+  right: 10%;
+}
+.button-component:hover .faIcon {
+  left: 17.5%;
 }
 
 .button-component:hover {
-  background-color: #d62839;
+  background-color: #db1a2d;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-component:not(:hover) {
+  animation: shrinkToNormal 1s forwards;
 }
 
 .container-pokedex {
@@ -246,6 +284,23 @@
   to {
     transform: translateX(100%);
     opacity: 0;
+  }
+}
+
+@keyframes expandLeft {
+  from {
+    width: 90px;
+  }
+  to {
+    width: 135px;
+  }
+}
+@keyframes shrinkToNormal {
+  from {
+    width: 135px;
+  }
+  to {
+    width: 90px;
   }
 }
 
