@@ -31,7 +31,6 @@ function App() {
   function showToasty(message) {
     const id = Date.now(); // ID único por tiempo
     const newToast = { id, message };
-
     setToasts((prev) => [...prev, newToast]);
   }
 
