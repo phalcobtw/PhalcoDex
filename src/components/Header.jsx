@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+
 export default function Header({ onSubmit, inputRef }) {
   function handleSubmit(e) {
     e.preventDefault(); // evita que recargue la página
@@ -9,7 +12,8 @@ export default function Header({ onSubmit, inputRef }) {
       <form className="container-search" onSubmit={handleSubmit}>
         <input type="text" placeholder="Pokemon..." ref={inputRef} />
         <button type="submit" className="button-component">
-          Buscar
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="faIcon" />
+          <span className="button-text">Buscar</span>
         </button>
       </form>
     </header>
