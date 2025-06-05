@@ -27,6 +27,7 @@
 .error-modal > form > button {
   flex: 1;
   width: 50%;
+  border: none;
 }
 
 dialog::backdrop {
