@@ -4,6 +4,7 @@ import PokedexContainer from "./components/PokedexContainer.jsx";
 import Toast from "./components/Toast.jsx";
 import DarkBackground from "./components/DarkBackground.jsx";
 import { useEffect, useRef, useState } from "react";
+import { formatInputText } from "./utils/helpers.js";
 
 function App() {
   const inputRef = useRef();
@@ -36,7 +37,7 @@ function App() {
   }
 
   function handleClick() {
-    const name = inputRef.current.value.trim().toLowerCase();
+    const name = formatInputText(inputRef.current.value.trim().toLowerCase());
     if (name) {
       setPokemonName(name);
     }
