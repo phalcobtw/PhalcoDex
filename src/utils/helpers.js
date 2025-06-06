@@ -8,3 +8,7 @@ export function capitalizeWord(texto) {
       .join(" ");
   }
 }
+
+export function formatInputText(text) {
+  return text.replaceAll(" ", "-");
+}
