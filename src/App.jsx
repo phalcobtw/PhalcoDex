@@ -56,7 +56,11 @@ function App() {
         ))}
       </div>
       <Header inputRef={inputRef} onSubmit={handleClick}></Header>
-      <PokedexContainer data={pokemonData}></PokedexContainer>
+      {pokemonData !== null || pokemonData !== undefined ? (
+        <PokedexContainer data={pokemonData}></PokedexContainer>
+      ) : (
+        ""
+      )}
     </>
   );
 }
