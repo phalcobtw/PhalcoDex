@@ -7,7 +7,7 @@ export default function PokedexAbilities({ data }) {
 
   useEffect(() => {
     async function fetchAbilitiesData() {
-      if (!data.abilities) return;
+      if (!data?.abilities) return;
       try {
         const results = await Promise.all(
           data.abilities.map(async (abilityObj) => {
@@ -34,13 +34,13 @@ export default function PokedexAbilities({ data }) {
   }, [data]);
   return (
     <div className="">
-      <h3>Abilities</h3>
+      <h3 className={`type-${data.types[0].type.name} text-type`}>Abilities</h3>
       <div className="abilities-container">
         {abilitiesInfo
           ? abilitiesInfo.map((ability, index) => (
               <Abilities key={index}>
-                <h4>{capitalizeWord(ability.name)}</h4>
-                <p>{ability.description}</p>
+                <h4>{capitalizeWord(ability?.name)}</h4>
+                <p>{ability?.description}</p>
               </Abilities>
             ))
           : "..."}
