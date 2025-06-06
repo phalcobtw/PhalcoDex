@@ -17,9 +17,10 @@ body {
   position: relative;
   flex-direction: column;
   place-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
   background-image: url("pokemon-background.jpg");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  background-repeat: no-repeat;
+  background-color: #00b336;
+  height: 110vh;
 }

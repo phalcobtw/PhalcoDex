@@ -1,26 +1,15 @@
-import PokedexStats from "./PokedexStats.jsx";
-import PokedexTypes from "./PokedexTypes.jsx";
-import PokedexAbout from "./PokedexAbout.jsx";
 import PokedexHeader from "./PokedexHeader.jsx";
 import PokedexSprites from "./PokedexSprites.jsx";
-import PokedexAbilities from "./PokedexAbilities.jsx";
+import PokedexInfo from "./PokedexInfo.jsx";
 
 export default function PokedexContainer({ data }) {
+  if (!data || !data.types || !data.types[0]) return null;
   return (
     <>
-      <div className="container-pokedex">
+      <div className={`container-pokedex type-${data?.types[0]?.type?.name} bg-type`}>
         <PokedexHeader data={data}></PokedexHeader>
         <PokedexSprites data={data}></PokedexSprites>
-        <div className="pokedex-info">
-          <div className="info-leftpanel panel">
-            <PokedexAbout data={data}></PokedexAbout>
-            <PokedexAbilities data={data}></PokedexAbilities>
-          </div>
-          <div className="info-rightpanel panel">
-            <PokedexTypes data={data}></PokedexTypes>
-            <PokedexStats data={data}></PokedexStats>
-          </div>
-        </div>
+        <PokedexInfo data={data}></PokedexInfo>
       </div>
     </>
   );
