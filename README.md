@@ -1,32 +1,53 @@
-# 📘 Pokédex Simple
+# PhalcoDex
 
-Una Pokédex minimalista construida con **React**, **Vite** y **CSS**, que permite buscar información básica de Pokémon utilizando la [PokéAPI](https://pokeapi.co/). Este proyecto forma parte de mi portafolio personal para demostrar el consumo de APIs, el manejo de estado en React y una UI limpia.
+**PhalcoDex** is a modern web-based Pokédex built with **React + React Router**, allowing you to search and view detailed information about any Pokémon using the [PokeAPI](https://pokeapi.co/).
 
----
+### 🚀 Features
 
-## 🧩 Funcionalidades
-
-- 🔍 Búsqueda de Pokémon por nombre
-- 📸 Visualización de sprites (frontal y trasero)
-- ⚡ Muestra de habilidades y estadísticas básicas
-- 🎨 Interfaz responsive y diseño minimalista
-
----
-
-## 🛠️ Tecnologías
-
-- ⚛️ React
-- ⚡ Vite
-- 🎨 CSS (Flexbox y Grid)
-- 🔗 PokéAPI
+- 🔍 **Interactive search bar** – Enter a Pokémon name and get redirected to `/pokemon/:pokemonName`.
+- 🌐 **Seamless client-side navigation** using React Router without page reloads.
+- 📦 **Clean separation of concerns** between the search input and the Pokémon data page.
+- ⚠️ **Custom toast notifications** for errors like "Pokémon not found".
+- 🎨 **Retro Pokédex-inspired design**, with background images working properly even on deep routes.
 
 ---
 
-## 🚀 Instalación y ejecución
+### 🛠️ Tech Stack
 
-```bash
-git clone https://github.com/tu-usuario/pokedex-simple.git
-cd pokedex-simple
-npm install
-npm run dev
-```
+- React
+- React Router DOM (v6+)
+- Vite
+- Plain CSS
+- PokeAPI
+
+---
+
+### 📦 Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/phalcodex.git
+   cd phalcodex
+   ```
+
+1. Install dependencies:
+
+   ```
+   npm install
+   ```
+
+1. Run the development server:
+
+   ```
+   npm run dev
+   ```
+
+1. Open the localhost:
+   ```
+   http://localhost:5173
+   ```
+
+### 📷 Screenshot
+
+![PhalcoDex screenshot](./Screenshot_1.png)
