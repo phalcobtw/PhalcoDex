@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./pages/Home.jsx";
 import RootLayout from "./pages/RootLayout.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
+import PokemonPage from "./pages/PokemonPage.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -10,7 +11,10 @@ function App() {
       path: "/",
       element: <RootLayout></RootLayout>,
       errorElement: <ErrorPage></ErrorPage>,
-      children: [{ index: true, element: <Home></Home> }],
+      children: [
+        { index: true, element: <Home></Home> },
+        { path: "/pokemon/:pokemonName", element: <PokemonPage></PokemonPage> },
+      ],
     },
   ]);
 
