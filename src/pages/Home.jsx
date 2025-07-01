@@ -1,8 +1,8 @@
 export default function Home() {
   return (
     <div className="home-page">
-      <h1>Bienvenido a la Pokédex</h1>
-      <p>Usa el buscador para encontrar información de cualquier Pokémon.</p>
+      <h1>Welcome to the Pokédex</h1>
+      <p>Use the search bar to find information about any Pokémon.</p>
     </div>
   );
 }
