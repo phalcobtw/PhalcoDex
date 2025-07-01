@@ -288,6 +288,7 @@
 .home-page {
   font-family: "Press Start 2P", system-ui;
   margin-top: 10rem;
+  /* padding-bottom: 15rem; */
 }
 
 .nav {

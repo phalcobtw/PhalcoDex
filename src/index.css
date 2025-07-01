@@ -22,5 +22,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-color: #00b336;
-  height: 110vh;
+  height: 100%;
+  overflow: scroll;
+  background-attachment: fixed;
 }
