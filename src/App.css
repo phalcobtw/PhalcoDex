@@ -285,6 +285,11 @@
   margin: 0;
 }
 
+.home-page {
+  font-family: "Press Start 2P", system-ui;
+  margin-top: 10rem;
+}
+
 .nav {
   display: flex;
   flex-direction: row;
