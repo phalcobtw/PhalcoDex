@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import PokedexContainer from "../components/PokedexContainer";
 import Toast from "../components/Toast";
@@ -6,6 +6,7 @@ export default function PokemonPage() {
   const { pokemonName } = useParams();
   const [toasts, setToasts] = useState([]);
   const [pokemonData, setPokemonData] = useState({});
+  const pokedexRef = useRef();
 
   useEffect(() => {
     if (!pokemonName) return; // evita llamada inicial vacía
@@ -25,11 +26,20 @@ export default function PokemonPage() {
     fetchData();
   }, [pokemonName]);
 
+  useEffect(() => {
+    if (pokedexRef.current) {
+      setTimeout(() => {
+        pokedexRef.current.scrollIntoView({ behavior: "smooth" });
+      }, 250);
+    }
+  }, [pokemonData]);
+
   function showToasty(message) {
     const id = Date.now(); // ID único por tiempo
     const newToast = { id, message };
     setToasts((prev) => [...prev, newToast]);
   }
+
   return (
     <>
       <div className="toast-container">
@@ -43,7 +53,7 @@ export default function PokemonPage() {
         ))}
       </div>
       {pokemonData !== null || pokemonData !== undefined ? (
-        <PokedexContainer data={pokemonData}></PokedexContainer>
+        <PokedexContainer data={pokemonData} ref={pokedexRef}></PokedexContainer>
       ) : (
         ""
       )}
