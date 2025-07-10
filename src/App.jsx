@@ -9,11 +9,11 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <RootLayout></RootLayout>,
-      errorElement: <ErrorPage></ErrorPage>,
+      element: <RootLayout />,
+      errorElement: <ErrorPage />,
       children: [
-        { index: true, element: <Home></Home> },
-        { path: "/pokemon/:pokemonName", element: <PokemonPage></PokemonPage> },
+        { index: true, element: <Home /> },
+        { path: "/pokemon/:pokemonName", element: <PokemonPage /> },
       ],
     },
   ]);
