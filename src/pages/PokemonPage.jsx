@@ -1,38 +1,33 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import PokedexContainer from "../components/PokedexContainer";
 import Toast from "../components/Toast";
+import Loading from "../components/Loading";
 export default function PokemonPage() {
   const { pokemonName } = useParams();
   const [toasts, setToasts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [pokemonData, setPokemonData] = useState({});
-  const pokedexRef = useRef();
 
   useEffect(() => {
     if (!pokemonName) return; // evita llamada inicial vacía
 
     async function fetchData() {
+      setIsLoading(true);
       try {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
         if (!res.ok) throw new Error("Pokémon no encontrado");
         const data = await res.json();
         setPokemonData(data);
+        setIsLoading(false);
       } catch (err) {
         showToasty(err.message);
-        setPokemonName("");
+        setIsLoading(false);
       }
     }
 
     fetchData();
   }, [pokemonName]);
-
-  useEffect(() => {
-    if (pokedexRef.current) {
-      setTimeout(() => {
-        pokedexRef.current.scrollIntoView({ behavior: "smooth" });
-      }, 250);
-    }
-  }, [pokemonData]);
 
   function showToasty(message) {
     const id = Date.now(); // ID único por tiempo
@@ -52,8 +47,9 @@ export default function PokemonPage() {
           />
         ))}
       </div>
-      {pokemonData !== null || pokemonData !== undefined ? (
-        <PokedexContainer data={pokemonData} ref={pokedexRef}></PokedexContainer>
+      {isLoading ? <Loading></Loading> : ""}
+      {(pokemonData !== null || pokemonData !== undefined) && !isLoading ? (
+        <PokedexContainer data={pokemonData}></PokedexContainer>
       ) : (
         ""
       )}
