@@ -6,7 +6,7 @@ export default function ErrorPage() {
     <>
       <DarkBackground></DarkBackground>
       <Nav></Nav>
-      <div className="error-path">
+      <div className="infotext-container">
         <h3>Error!</h3>
         <p>The route does not exist!</p>
       </div>
