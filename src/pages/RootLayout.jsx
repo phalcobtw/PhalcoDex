@@ -2,7 +2,7 @@ import Nav from "../components/Nav";
 import DarkBackground from "../components/DarkBackground";
 import { Outlet, useNavigate } from "react-router";
 import Header from "../components/Header";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { formatInputText } from "../utils/helpers";
 
 export default function RootLayout() {
@@ -12,6 +12,7 @@ export default function RootLayout() {
   function handleClick() {
     const name = formatInputText(inputRef.current.value.trim().toLowerCase());
     navigate(`/pokemon/${name}`);
+    inputRef.current.value = "";
   }
   return (
     <>
