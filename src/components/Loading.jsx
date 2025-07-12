@@ -5,7 +5,7 @@ export default function ErrorPage() {
   return (
     <>
       <DarkBackground></DarkBackground>
-      <div className="loading-container">
+      <div className="infotext-container loading-container">
         <h3>Loading!</h3>
         <p>Please wait a moment...</p>
       </div>
