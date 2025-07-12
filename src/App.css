@@ -287,7 +287,7 @@
 
 .home-page {
   font-family: "Press Start 2P", system-ui;
-  margin-top: 10rem;
+  margin-top: 3rem;
   /* padding-bottom: 15rem; */
 }
 
@@ -313,7 +313,7 @@
   color: #949494;
 }
 
-.error-path {
+.infotext-container {
   background-color: white;
   padding: 2rem;
   color: black;
@@ -321,13 +321,38 @@
   border-radius: 10px;
 }
 
-.loading-container {
-  background-color: white;
-  padding: 2rem;
-  color: black;
-  font-family: "Press Start 2P", system-ui;
-  border-radius: 10px;
+.infotext-container.loading-container {
   margin-top: 2rem;
+}
+
+.infotext-container.dailypokemon {
+  width: 250px;
+  height: 250px;
+  margin: 1rem auto 0;
+  padding: 1rem;
+  font-size: 1.04em;
+}
+.infotext-container.dailypokemon img {
+  width: 150px;
+  height: 150px;
+}
+
+.daily-container {
+  margin-top: 4rem;
+}
+
+.daily-container button {
+  cursor: pointer;
+}
+
+.daily-container button:hover {
+  transform: scale(1.05);
+  transition: all 0.5s ease-in;
+}
+
+.daily-container button:not(:hover) {
+  transform: scale(1);
+  transition: all 0.5s ease-in;
 }
 
 .toast {
