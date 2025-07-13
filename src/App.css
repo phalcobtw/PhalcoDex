@@ -157,6 +157,7 @@
   text-decoration: none;
   list-style-type: none;
   margin-left: auto;
+  gap: 0.25rem;
 }
 
 .sprites-actions li button {
