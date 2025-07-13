@@ -171,14 +171,20 @@
   align-items: center;
   margin: 0 auto;
 }
+.sprites-actions li button.active img {
+  filter: invert(100%);
+}
 
 .sprites-actions li button.active {
   background-color: var(--type-color);
-  filter: brightness(80%);
+  filter: brightness(120%);
 }
 .sprites-actions li button:hover {
   cursor: pointer;
   background-color: white;
+}
+.sprites-actions li button:hover.active img {
+  filter: brightness(0) saturate(100%);
 }
 .sprites-actions li button:hover:not(.active) {
   background-color: var(--type-color);
