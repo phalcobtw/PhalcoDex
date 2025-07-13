@@ -21,8 +21,14 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #00b336;
+  background-color: #222222;
   height: 100%;
   overflow: scroll;
   background-attachment: fixed;
+}
+
+@media (max-width: 767px) {
+  body {
+    overflow: auto;
+  }
 }
