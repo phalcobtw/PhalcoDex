@@ -663,6 +663,8 @@
   .info-leftpanel {
     padding-right: 0;
     padding-bottom: 0.5rem;
+    align-self: center;
+    width: 100%;
   }
   .info-rightpanel {
     padding-left: 0;
