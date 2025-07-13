@@ -16,13 +16,6 @@ export function fetchDailyPokemon() {
   // No hay uno guardado o ya cambió el día => genera nuevo
   const randomIndex = Math.floor(Math.random() * 1302);
   const dailyPokemon = pokemonList[randomIndex];
-  console.log(dailyPokemon.name, JSON.parse(stored).pokemon.name);
-
-  if (dailyPokemon.name === JSON.parse(stored).pokemon.name) {
-    // Generamos otro poke si es identico al anterior
-    randomIndex = Math.floor(Math.random() * 1302);
-    dailyPokemon = pokemonList[randomIndex];
-  }
 
   const toStore = {
     pokemon: dailyPokemon,
