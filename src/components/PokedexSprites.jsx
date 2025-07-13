@@ -6,9 +6,9 @@ export default function PokedexSprites({ data }) {
   const [spriteMode, setSpriteMode] = useState({ hd: false, shiny: false });
   const sprites = [
     data?.sprites?.front_default,
-    data?.sprites?.other?.["official-artwork"]?.front_default,
+    data?.sprites?.other?.["home"]?.front_default,
     data?.sprites?.front_shiny,
-    data?.sprites?.other?.["official-artwork"]?.front_shiny,
+    data?.sprites?.other?.["home"]?.front_shiny,
   ];
 
   function handleClick(identifier) {
