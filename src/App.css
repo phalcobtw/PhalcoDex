@@ -160,13 +160,27 @@
 }
 
 .sprites-actions li button {
+  width: 42px;
+  height: 36px;
+  display: flex;
   background-color: white;
   color: black;
   border-radius: 10px;
+  border: 3px outset #a8a8a8;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .sprites-actions li button.active {
-  background-color: yellow;
+  background-color: var(--type-color);
+  filter: brightness(80%);
+}
+.sprites-actions li button:hover {
+  cursor: pointer;
+  background-color: white;
+}
+.sprites-actions li button:hover:not(.active) {
+  background-color: var(--type-color);
 }
 
 .pokemon-sprite {
