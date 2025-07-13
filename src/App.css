@@ -171,6 +171,10 @@
   align-items: center;
   margin: 0 auto;
 }
+.sprites-actions li button img {
+  width: 24px;
+  height: 24px;
+}
 .sprites-actions li button.active img {
   filter: invert(100%);
 }

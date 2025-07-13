@@ -1,5 +1,5 @@
 import { useState } from "react";
-import HDIcon from "../assets/hd-display.svg";
+import TDIcon from "../assets/badge-3d.svg";
 import Sparks from "../assets/sparks-solid.svg";
 
 export default function PokedexSprites({ data }) {
@@ -35,7 +35,7 @@ export default function PokedexSprites({ data }) {
         </li>
         <li>
           <button onClick={() => handleClick("hd")} className={spriteMode.hd ? "active" : ""}>
-            <img src={HDIcon}></img>
+            <img src={TDIcon}></img>
           </button>
         </li>
       </ul>
