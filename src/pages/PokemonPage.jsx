@@ -16,7 +16,7 @@ export default function PokemonPage() {
       setIsLoading(true);
       try {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-        if (!res.ok) throw new Error("Pokémon no encontrado");
+        if (!res.ok) throw new Error("Pokemon not found!");
         const data = await res.json();
         setPokemonData(data);
         setIsLoading(false);
