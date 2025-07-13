@@ -21,7 +21,7 @@ export default function PokemonOfTheDay() {
 
   return (
     <div className="daily-container">
-      <h2>Pokemon of the Day</h2>
+      <h2>Your Pokemon of the Day</h2>
       <button className="infotext-container dailypokemon" onClick={handleClick}>
         <h3>{capitalizeWord(dailyPokemon.name)}</h3>
         <img
