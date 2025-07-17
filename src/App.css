@@ -160,6 +160,40 @@
   gap: 0.25rem;
 }
 
+.rhap_container {
+  background-color: var(--type-color) !important;
+  border-radius: 2rem !important;
+  /* box-shadow: none !important; */
+  margin-top: 10px !important;
+  width: 20% !important;
+  border: none !important;
+}
+.rhap_container svg {
+  color: var(--type-color) !important;
+  filter: brightness(0.5) !important;
+}
+.rhap_volume-bar {
+  background-color: white !important;
+  display: none !important;
+}
+.rhap_volume-container {
+  display: none !important;
+}
+.rhap_progress-section {
+  display: none !important;
+}
+
+.rhap_stacked .rhap_controls-section {
+  margin-top: 0 !important;
+}
+
+.rhap_play-pause-button,
+.rhap_volume-indicator,
+path {
+  background-color: var(--type-color);
+  filter: brightness(0.5);
+}
+
 .sprites-actions li button {
   width: 42px;
   height: 36px;
@@ -615,6 +649,11 @@
     justify-content: center;
     max-width: 90%;
     margin: 0;
+  }
+  .rhap_container {
+    margin-top: 20px !important;
+    width: 40% !important;
+    border: none !important;
   }
 
   .header {

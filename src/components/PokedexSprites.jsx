@@ -1,6 +1,8 @@
 import { useState } from "react";
 import TDIcon from "../assets/badge-3d.svg";
 import Sparks from "../assets/sparks-solid.svg";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 export default function PokedexSprites({ data }) {
   const [spriteMode, setSpriteMode] = useState({ hd: false, shiny: false });
@@ -40,6 +42,14 @@ export default function PokedexSprites({ data }) {
         </li>
       </ul>
       {data?.sprites?.front_default ? <img src={getSprite()} alt={data.name} className="pokemon-sprite" /> : "..."}
+      <AudioPlayer
+        src={data.cries.latest}
+        autoPlay={false}
+        showSkipControls={false}
+        showJumpControls={false}
+        volume={0.3}
+        customAdditionalControls={[]}
+      ></AudioPlayer>
     </div>
   );
 }
