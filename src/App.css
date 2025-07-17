@@ -163,17 +163,12 @@
 .rhap_container {
   background-color: var(--type-color) !important;
   border-radius: 2rem !important;
-  /* box-shadow: none !important; */
   margin-top: 10px !important;
   width: 20% !important;
   border: none !important;
 }
-.rhap_container svg {
-  color: var(--type-color) !important;
-  filter: brightness(0.5) !important;
-}
+
 .rhap_volume-bar {
-  background-color: white !important;
   display: none !important;
 }
 .rhap_volume-container {
@@ -186,12 +181,9 @@
 .rhap_stacked .rhap_controls-section {
   margin-top: 0 !important;
 }
-
-.rhap_play-pause-button,
-.rhap_volume-indicator,
-path {
-  background-color: var(--type-color);
-  filter: brightness(0.5);
+.rhap_play-pause-button svg {
+  color: var(--type-color) !important;
+  filter: brightness(0.5) !important;
 }
 
 .sprites-actions li button {
